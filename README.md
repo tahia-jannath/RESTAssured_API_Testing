@@ -13,7 +13,7 @@ It contains all the TEST DEPENDENCIES
 1.Google Map API Status Code and Status line validation
 2.Google Map- Header Validation
 3.Google Map-Printing All Header
-Code{
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -54,12 +54,12 @@ public class Test_Get_request {
 		Assert.assertEquals(contentType, "text/html; charset=UTF-8");		
 	}	
 
-}}
+}
 ## Post,PUT,Delete Class contain
 1. Insert a person details, update an delete.
 
 ### Post
-Code{
+
 import java.util.HashMap;
 import java.util.Map;
 import org.json.simple.JSONObject;
@@ -104,10 +104,10 @@ public class Test_post_request {
 		then().statusCode(204).
 		log().all();
 		}
-		catch(AssertionError ae)}}}
+		catch(AssertionError ae)}}
 
 ### Put
-Code{
+
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
 
@@ -163,11 +163,11 @@ void test_01_put() {
 }
 	
 }
-}
+
 
   
  ### Delete
-Code{
+
 import static io.restassured.RestAssured.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -202,10 +202,10 @@ public class Test_Delete {
 		then().statusCode(204).
 		log().all();
 		}
-		catch(AssertionError ae)}}}}
+		catch(AssertionError ae)}}}
       
 ### Error_Handeling
-Code{
+
 
 import static io.restassured.RestAssured.when;
 
@@ -229,7 +229,7 @@ public class Error_handeling {
 		}
 		catch(AssertionError ae){
            
-			System.out.println("Invalied error code");}}}
+			System.out.println("Invalied error code");}}
 
 
 
