@@ -39,7 +39,9 @@ public class Test_Get_request {
 		Assert.assertEquals(statusCode, 200);
 		System.out.println("status code is  " +statusCode);
 		String statusLine= response.getStatusLine();
-   	System.out.println("status Line is  " +statusLine); 			
+   	System.out.println("status Line is  " +statusLine); 
+	Assert.assertTrue(response.getTimeIn(TimeUnit.SECONDS)<=5,"Response time is not withing limit");	
+
 	}
 	
 	void Google_Map_Nearest_Resuarent()
@@ -88,6 +90,8 @@ public class Test_post_request {
 		given().header("Contant_Type","application/json").body(request.toJSONString()).
 		when().post("https://reqres.in/api/users").
 		then().statusCode(201);
+		Assert.assertTrue(response.getTimeIn(TimeUnit.SECONDS)<=5,"Response time is not withing limit");	
+
 		
 		System.out.println(response.asString());
 		System.out.println(response.getBody().asString());
@@ -143,6 +147,8 @@ void test_01_put() {
 	given().header("Contant_Type","application/json").body(request.toJSONString()).
 	when().put("https://reqres.in/api/users/2").
 	then().statusCode(200);
+	Assert.assertTrue(response.getTimeIn(TimeUnit.SECONDS)<=5,"Response time is not withing limit");	
+
 
 	System.out.println(response.asString());
 	System.out.println(response.getBody().asString());
@@ -186,6 +192,8 @@ public class Test_Delete {
 		delete("https://reqres.in/api/users/2").
 		then().statusCode(204).
 		log().all();
+		Assert.assertTrue(response.getTimeIn(TimeUnit.SECONDS)<=5,"Response time is not withing limit");	
+
 			
 		System.out.println(response.asString());
 		System.out.println(response.getBody().asString());
